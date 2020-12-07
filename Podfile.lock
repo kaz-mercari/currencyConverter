@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (5.4.0)
+  - Nimble (9.0.0)
+  - Quick (3.0.0)
+  - Swinject (2.7.1)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - Nimble (= 9.0.0)
+  - Quick (= 3.0.0)
+  - Swinject (= 2.7.1)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Nimble
+    - Quick
+    - Swinject
+
+SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
+  Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
+  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+
+PODFILE CHECKSUM: 0a4a7bbc50d4e3d5c0029f9d05181aeb2da1433c
+
+COCOAPODS: 1.10.0
