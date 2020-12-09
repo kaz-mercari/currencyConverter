@@ -8,7 +8,7 @@
 import Alamofire
 
 protocol Gateway {
-    func request(response: (Data?) -> ())
+    func request(responseHandler: @escaping (Data?) -> ())
 }
 
 struct DataGateway: Gateway {
@@ -20,7 +20,7 @@ struct DataGateway: Gateway {
         return URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 60)
     }()
     
-    func request(response: (Data?) -> ()) {
+    func request(responseHandler: @escaping (Data?) -> ()) {
         let lastFetchedAtKey = "last_fetched_at"
         
         if let date = UserDefaults.standard.date(forKey: lastFetchedAtKey),
@@ -29,7 +29,7 @@ struct DataGateway: Gateway {
         }
         AF.request(exchangeRateRequest)
             .response { response in
-                debugPrint(response)
+                responseHandler(response.data)
                 UserDefaults.standard.setValue(Date(), forKey: lastFetchedAtKey)
             }
     }
