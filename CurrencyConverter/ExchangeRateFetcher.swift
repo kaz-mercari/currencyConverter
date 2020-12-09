@@ -9,16 +9,28 @@ import Foundation
 
 struct ExchangeRateFetcher {
     let dataGateway: Gateway
+
+    struct Response: Decodable {
+        let isSuccessful: Bool
+        let sourceCurrency: String
+        let quotes: [String: Float]
+        enum CodingKeys: String, CodingKey {
+            case isSuccessful = "success"
+            case sourceCurrency = "source"
+            case quotes
+        }
+    }
+
     
-    func fetch(response: (ExchangeRate?) -> ()) {
+    func fetch(responseHandler: @escaping (Response?) -> ()) {
         dataGateway.request { data in
             guard let data = data,
-                  let exchangeRate = try? JSONDecoder().decode(ExchangeRate.self, from: data),
+                  let exchangeRate = try? JSONDecoder().decode(Response.self, from: data),
                   exchangeRate.isSuccessful else {
-                response(nil)
+                responseHandler(nil)
                 return
             }
-            response(exchangeRate)
+            responseHandler(exchangeRate)
         }
     }
 }
