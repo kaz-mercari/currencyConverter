@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_CurrencyConverterTestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CurrencyConverterTestsVersionString[];
+FOUNDATION_EXPORT double Pods_CurrencyConverter_CurrencyConverterTestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_CurrencyConverter_CurrencyConverterTestsVersionString[];
 
