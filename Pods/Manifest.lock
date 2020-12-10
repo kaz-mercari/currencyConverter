@@ -2,12 +2,17 @@ PODS:
   - Alamofire (5.4.0)
   - Nimble (9.0.0)
   - Quick (3.0.0)
+  - ReactiveCocoa (10.3.0):
+    - ReactiveSwift (~> 6.2)
+  - ReactiveSwift (6.5.0)
   - Swinject (2.7.1)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
   - Nimble (= 9.0.0)
   - Quick (= 3.0.0)
+  - ReactiveCocoa (~> 10.1)
+  - ReactiveSwift (~> 6.1)
   - Swinject (= 2.7.1)
 
 SPEC REPOS:
@@ -15,14 +20,18 @@ SPEC REPOS:
     - Alamofire
     - Nimble
     - Quick
+    - ReactiveCocoa
+    - ReactiveSwift
     - Swinject
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
   Nimble: 3b4ec3fd40f1dc178058e0981107721c615643d8
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
+  ReactiveCocoa: 083ae559e6f588ce519cab412ea119b431c26a24
+  ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
 
-PODFILE CHECKSUM: d8ab6444e020f1252a9cad8d9263f0b9537a249a
+PODFILE CHECKSUM: b7383411f666417684ccaca6d0d8186fbfbe182b
 
 COCOAPODS: 1.10.0
