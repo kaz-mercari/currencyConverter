@@ -14,6 +14,8 @@ struct ExchangeRateFetcher {
         let isSuccessful: Bool
         let sourceCurrency: String
         let quotes: [String: Float]
+        lazy var exchangeRate = ExchangeRate(sourceCurrency: sourceCurrency, quotes: quotes)
+        
         enum CodingKeys: String, CodingKey {
             case isSuccessful = "success"
             case sourceCurrency = "source"
