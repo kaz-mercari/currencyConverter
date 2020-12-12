@@ -1,5 +1,9 @@
 //
-//  Copyright © 2019 Swinject Contributors. All rights reserved.
+//  Behavior.swift
+//  Swinject-iOS
+//
+//  Created by Jakub Vaňo on 16/02/2018.
+//  Copyright © 2018 Swinject Contributors. All rights reserved.
 //
 
 /// Protocol for adding functionality to the container

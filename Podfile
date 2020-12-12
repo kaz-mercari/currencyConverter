@@ -4,7 +4,7 @@ use_frameworks!
 
 target 'CurrencyConverter' do
     pod 'Alamofire', '~> 5.2'
-    pod 'Swinject', '2.7.1'
+    pod 'Swinject', '2.6.0'
     pod 'SwinjectStoryboard', '2.2.0'
     pod 'ReactiveSwift', '~> 6.1'
     pod 'ReactiveCocoa', '~> 10.1'

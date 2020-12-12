@@ -1,5 +1,9 @@
 //
-//  Copyright © 2019 Swinject Contributors. All rights reserved.
+//  ServiceEntry.swift
+//  Swinject
+//
+//  Created by Yoichi Tagaya on 7/24/15.
+//  Copyright © 2015 Swinject Contributors. All rights reserved.
 //
 
 import Foundation
@@ -32,7 +36,7 @@ public final class ServiceEntry<Service>: ServiceEntryProtocol {
     internal var initCompleted: FunctionType? {
         guard !initCompletedActions.isEmpty else { return nil }
 
-        return { [weak self] (resolver: Resolver, service: Any) -> Void in
+        return {[weak self] (resolver: Resolver, service: Any) -> Void in
             guard let strongSelf = self else { return }
             strongSelf.initCompletedActions.forEach { $0(resolver, service as! Service) }
         }
@@ -44,7 +48,7 @@ public final class ServiceEntry<Service>: ServiceEntryProtocol {
         self.factory = factory
     }
 
-    internal convenience init(
+    convenience internal init(
         serviceType: Service.Type,
         argumentsType: Any.Type,
         factory: FunctionType,

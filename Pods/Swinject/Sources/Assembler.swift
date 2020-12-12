@@ -1,9 +1,14 @@
 //
-//  Copyright © 2019 Swinject Contributors. All rights reserved.
+//  Assembler.swift
+//  Swinject
+//
+//  Created by mike.owens on 12/9/15.
+//  Copyright © 2015 Swinject Contributors. All rights reserved.
 //
 
 /// The `Assembler` provides a means to build a container via `Assembly` instances.
 public final class Assembler {
+
     /// the container that each assembly will build its `Service` definitions into
     private let container: Container
 
@@ -83,7 +88,7 @@ public final class Assembler {
         run(assemblies: assemblies)
     }
 
-    /// Will apply the assembly to the container. This is useful if you want to lazy load an assembly into the
+    /// Will apply the assembly to the container. This is useful if you want to lazy load an assembly into the 
     /// assembler's container.
     ///
     /// If this assembly type is load aware, the loaded hook will be invoked right after the container has assembled
@@ -96,7 +101,7 @@ public final class Assembler {
         run(assemblies: [assembly])
     }
 
-    /// Will apply the assemblies to the container. This is useful if you want to lazy load several assemblies into the
+    /// Will apply the assemblies to the container. This is useful if you want to lazy load several assemblies into the 
     /// assembler's container
     ///
     /// If this assembly type is load aware, the loaded hook will be invoked right after the container has assembled
@@ -113,12 +118,12 @@ public final class Assembler {
     private func run(assemblies: [Assembly]) {
         // build the container from each assembly
         for assembly in assemblies {
-            assembly.assemble(container: container)
+            assembly.assemble(container: self.container)
         }
 
         // inform all of the assemblies that the container is loaded
         for assembly in assemblies {
-            assembly.loaded(resolver: resolver)
+            assembly.loaded(resolver: self.resolver)
         }
     }
 }

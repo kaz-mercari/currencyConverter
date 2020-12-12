@@ -1,5 +1,9 @@
 //
-//  Copyright © 2019 Swinject Contributors. All rights reserved.
+//  _Resolver.swift
+//  Swinject
+//
+//  Created by Yoichi Tagaya on 5/4/16.
+//  Copyright © 2016 Swinject Contributors. All rights reserved.
 //
 
 /// This protocol is designed for the use to extend Swinject functionality.

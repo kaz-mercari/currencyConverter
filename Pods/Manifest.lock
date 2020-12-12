@@ -5,7 +5,7 @@ PODS:
   - ReactiveCocoa (10.3.0):
     - ReactiveSwift (~> 6.2)
   - ReactiveSwift (6.5.0)
-  - Swinject (2.7.1)
+  - Swinject (2.6.0)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
 
@@ -15,7 +15,7 @@ DEPENDENCIES:
   - Quick (= 3.0.0)
   - ReactiveCocoa (~> 10.1)
   - ReactiveSwift (~> 6.1)
-  - Swinject (= 2.7.1)
+  - Swinject (= 2.6.0)
   - SwinjectStoryboard (= 2.2.0)
 
 SPEC REPOS:
@@ -34,9 +34,9 @@ SPEC CHECKSUMS:
   Quick: 6d9559f40647bc4d510103842ef2fdd882d753e2
   ReactiveCocoa: 083ae559e6f588ce519cab412ea119b431c26a24
   ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
-  Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: 4759c40d239bef50430b3e40be5643229f709260
+PODFILE CHECKSUM: 6821091227b416ac3ba0c42ed732a82b8e4a52c3
 
 COCOAPODS: 1.10.0

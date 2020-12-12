@@ -1,5 +1,9 @@
 //
-//  Copyright © 2019 Swinject Contributors. All rights reserved.
+//  Container.Logging.swift
+//  Swinject
+//
+//  Created by Jakub Vaňo on 30/09/16.
+//  Copyright © 2016 Swinject Contributors. All rights reserved.
 //
 
 public typealias LoggingFunctionType = (String) -> Void
