@@ -6,6 +6,8 @@ PODS:
     - ReactiveSwift (~> 6.2)
   - ReactiveSwift (6.5.0)
   - Swinject (2.7.1)
+  - SwinjectStoryboard (2.2.0):
+    - Swinject (~> 2.6)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -14,6 +16,7 @@ DEPENDENCIES:
   - ReactiveCocoa (~> 10.1)
   - ReactiveSwift (~> 6.1)
   - Swinject (= 2.7.1)
+  - SwinjectStoryboard (= 2.2.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -23,6 +26,7 @@ SPEC REPOS:
     - ReactiveCocoa
     - ReactiveSwift
     - Swinject
+    - SwinjectStoryboard
 
 SPEC CHECKSUMS:
   Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
@@ -31,7 +35,8 @@ SPEC CHECKSUMS:
   ReactiveCocoa: 083ae559e6f588ce519cab412ea119b431c26a24
   ReactiveSwift: 8d159904084e908856cde90b2e28823f3c7e485f
   Swinject: ddf78b8486dd9b71a667b852cad919ab4484478e
+  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
 
-PODFILE CHECKSUM: b7383411f666417684ccaca6d0d8186fbfbe182b
+PODFILE CHECKSUM: 4759c40d239bef50430b3e40be5643229f709260
 
 COCOAPODS: 1.10.0
