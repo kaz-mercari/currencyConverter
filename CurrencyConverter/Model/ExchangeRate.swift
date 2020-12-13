@@ -14,13 +14,16 @@ class ExchangeRate {
         var table = [String: Float]()
         // stripping off the source currency from dictionary key
         for (key, value) in quotes {
-            table[key.replacingOccurrences(of: sourceCurrency, with: "")] = value
+            let newKey = key.replacingOccurrences(of: sourceCurrency, with: "")
+            if newKey != "" {
+                table[newKey] = value
+            }
         }
         return table
     }()
     
     var availableCurrencies: [String] {
-        return rateTable.keys.map { $0 } + [sourceCurrency]
+        return (rateTable.keys.map { $0 } + [sourceCurrency]).sorted()
     }
     
     init(sourceCurrency: String, quotes: [String: Float]) {

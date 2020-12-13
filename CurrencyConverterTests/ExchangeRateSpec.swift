@@ -13,12 +13,12 @@ import Swinject
 class ExchangeRateSpec: QuickSpec {
     override func spec() {
         
-        it("returns available currencies.") {
+        it("returns available currencies in alphabetical order.") {
             let exchangeRate = ExchangeRate(
                 sourceCurrency: "USD",
-                quotes: ["USDJPY": 3, "USDAUD": 12, "USDCAD": 3]
+                quotes: ["USDJPY": 3, "USDAUD": 12, "USDCAD": 3, "USDUSD": 1]
             )
-            expect(exchangeRate.availableCurrencies).to(contain(["USD","JPY","AUD","CAD"]))
+            expect(exchangeRate.availableCurrencies).to(equal(["AUD","CAD","JPY","USD"]))
         }
         
         it("returns rates for source currency rate.") {
