@@ -38,7 +38,7 @@ class ExchangeRateFetcherSpec : QuickSpec {
             container = Container()
 
             // Registrations for the gateway using Alamofire.
-            container.register(Gateway.self) { _ in DataGateway() }
+            container.register(Gateway.self) { _ in DataGateway(rateLimit: 1) }
             container.register(ExchangeRateFetcher.self) { r in
                 ExchangeRateFetcher(dataGateway: r.resolve(Gateway.self)!)
             }
@@ -61,6 +61,7 @@ class ExchangeRateFetcherSpec : QuickSpec {
             expect(response?.isSuccessful).toEventually(beTrue())
             expect(response?.quotes.count).toEventually(beGreaterThan(0))
         }
+        
         it("fills exchange rate data.") {
             var response: ExchangeRateFetcher.Response?
             let fetcher = container.resolve(ExchangeRateFetcher.self, name: "stub")!
@@ -71,6 +72,7 @@ class ExchangeRateFetcherSpec : QuickSpec {
             expect(response?.quotes["USDAFN"]).to(equal(76.950404))
             expect(response?.quotes["USDALL"]).to(equal(101.850403))
         }
+        
     }
 }
 

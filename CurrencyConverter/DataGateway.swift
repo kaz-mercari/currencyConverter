@@ -12,8 +12,13 @@ protocol Gateway {
 }
 
 struct DataGateway: Gateway {
+    
+    let rateLimit: TimeInterval
+    
     // 30 min
-    let rateLimit: TimeInterval = 30 * 60
+    init(rateLimit: TimeInterval = 30 * 60) {
+        self.rateLimit = rateLimit
+    }
     
     let exchangeRateRequest: URLRequest = {
         // free account does not let us use secure connection (https)
@@ -21,17 +26,17 @@ struct DataGateway: Gateway {
         return URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 60)
     }()
     
+    // return cache if it exists. Cache is cleared every 30 min
     func request(responseHandler: @escaping (Data?) -> ()) {
-        let lastFetchedAtKey = "last_fetched_at"
-        
-        if let date = UserDefaults.standard.date(forKey: lastFetchedAtKey),
-           date.advanced(by: rateLimit) < Date() {
+        let lastCacheRemovedAtKey = "last_cache_removed_at"
+        let date = UserDefaults.standard.date(forKey: lastCacheRemovedAtKey) ?? Date(timeIntervalSince1970: 0)
+        if date.advanced(by: rateLimit) < Date() {
             URLCache.shared.removeCachedResponse(for: exchangeRateRequest)
+            UserDefaults.standard.setValue(Date(), forKey: lastCacheRemovedAtKey)
         }
         AF.request(exchangeRateRequest)
             .response { response in
                 responseHandler(response.data)
-                UserDefaults.standard.setValue(Date(), forKey: lastFetchedAtKey)
             }
     }
 }
