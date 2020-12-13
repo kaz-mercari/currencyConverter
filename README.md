@@ -1,6 +1,5 @@
 # Note
-build with
-- Xcode 12.0.1
+built with Xcode 12.0.1
 
 ### Functional Requirements:
 - [x] Exchange rates must be fetched from: https://currencylayer.com/documentation  
